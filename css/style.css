@@ -1,0 +1,86 @@
+/*
+Travis Pochintesta
+VFW 1304
+Week 3
+style.css
+*/
+
+body{
+	width:571px;
+	margin:auto;
+	padding:6px;
+	background: #111615;
+	color: #F2E2DA;
+	font-family: Arial, Helvetica, san-serif;
+}
+
+#content{
+	overflow: scroll;
+}
+
+h1{
+	font-size:36px;
+}
+
+form{
+	padding:15px;
+	background:#483F31;
+}
+
+form ul{
+	margin:6px;
+}
+
+form fieldset ul li{
+	padding:2px;
+}
+
+fieldset{
+	background:#75776D;
+}
+
+legend{
+	font-size:20px;
+	font-weight:bold;
+}
+
+#fname{
+	display: block;
+}
+
+#lname{
+	display: block;
+}
+
+#phone{
+	display: block;
+}
+
+#address{
+	display: block;
+}
+
+#email{
+	display: block;
+}
+
+#notes{
+	display: block;
+}
+
+.border{
+	border:1px solid #9FA9A3;
+}
+
+input:focus{
+	border-color:blue;
+}
+
+a{
+	padding:1px;
+	outline:1px dotted blue;
+}
+
+a:hover{
+	color:white; outline: none;
+}

@@ -160,7 +160,8 @@ window.addEventListener("DOMContentLoaded", function() {
 	function getContact(){
 		toggleDisplay("on");
 		if(localStorage.length === 0){
-			alert("No critters captured yet.");
+			alert("No critters captured yet so defaults added.");
+			autoFillData();
 		}
 		var makeContactList = document.createElement("div");
 		makeContactList.setAttribute("id", "items");
@@ -177,6 +178,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			var contact = JSON.parse(props);
 			var addProperties = document.createElement("li");
 			addContact.appendChild(addProperties);
+			getIcon(contact./* I think I need to make an array for my checkboxes. */addProperties);
 			for(var a in contact){
 				var addSubProp = document.createElement("li");
 				addProperties.appendChild(addSubProp);
@@ -185,6 +187,22 @@ window.addEventListener("DOMContentLoaded", function() {
 				addProperties.appendChild(addLinks);
 			}
 			makeLinks(localStorage.key(i),addLinks);
+		}
+	}
+	
+	function getIcon(catName, addProperties){
+		var iconLi = document.createElement("li");
+		addProperties.appendChild(iconLi);
+		var newIcon = document.createElement("img");
+		var iconSrc = newIcon.setAttribute("src", "/image" + iconCat + ".png");
+		iconLi.appendChild(newIcon);
+	}
+	
+	
+	function autoFillData(){
+		for (var n in json){
+			var key = Math.floor(Math.random()*10000001);
+			localStorage.setItem(key, JSON.stringify(json[n]));
 		}
 	}
 	
